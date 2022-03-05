@@ -10,7 +10,17 @@
   <script src="https://apis.google.com/js/platform.js" async defer></script>
 
   <script language="javascript">
-
+        function greetings() 
+            {
+            // var botHtml = '<p class="botText"><span>' + data + '</span></p>';
+            data=" Hello I am Alexa. your healthcare chatbot  Happy to help you!"
+            var voices = [];
+            voices = window.speechSynthesis.getVoices();
+            var msg1 = new SpeechSynthesisUtterance();
+            msg1.text = data;
+            msg1.voice = voices[0];
+            window.speechSynthesis.speak(msg1);
+        }
 	function show()
 	{
 		var uname = document.getElementById("name").value;
@@ -28,13 +38,14 @@
 		return true;
 	
 	}
+	greetings();
 </script>
 
 </head>
 <body>
 
 <div class="box-form" >
-	<div class="left" style="background-image: url(/static/robomoving.gif);background-size: auto;background-position:bottom;
+	<div class="left" style="background-image: url(/static/gif_play_once/third_gif.gif);background-size: auto;background-position:bottom;
 	background-repeat: no-repeat;overflow: hidden;">
 		<div class="overlay">
 		<h1 style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">ChatBot</h1>
@@ -74,7 +85,7 @@
 		</div>
 	 {%- endfor %}
 
-		<form action="login" method="POST" name="myform" onSubmit="return show()">
+		<form action="login" method="POST" name="myform" onSubmit="show()">
 			<div class="inputs">
 				<input style="font-size: larger;border-radius: 50px;background-image: linear-gradient(280deg,rgb(85, 224, 85) 10%,yellow);text-align: center;" type="text"id="name" placeholder=" Enter your user name :-)" name="name">
 			
