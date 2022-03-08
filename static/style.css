@@ -1,13 +1,27 @@
 body {
     font-family: "Open Sans", sans-serif;
-    background-image: linear-gradient(135deg, #FAB2FF 10%, #1904E5 100%);
+    /* background-image: url("robomoving.png"); */
     background-size: cover;
     background-repeat: no-repeat;
-    overflow: scroll;
+
     background-attachment: fixed;
-    background-position: 500px;
 
 }
+#sunny{
+    float: left;
+    background-image: url("/static/robomoving.png");
+    height: 600px;
+    width: 650px;
+    position: relative;
+    animation: a 1.0s steps(10) infinite ;
+    animation-duration: 2s;
+    overflow: hidden;
+}
+
+@keyframes a{
+    100% {background-position:90.60%}
+}
+
 .box-form {
     margin: 0 auto;
     width: 80%;
@@ -46,23 +60,35 @@ h3 {
     margin-top: 3px;
     text-align: center;
 }
+div.exe1{
+    overflow: scroll;
+}
+
+#sunny2{
+    float: right;
+    width: 50%;
+    background-attachment: fixed;
+    background-image: linear-gradient(white);
+    background-size: cover;
+    overflow: scroll;
+}
 
 #chatbox {
     margin-left: auto;
     margin-right: auto;
     width: 40%;
-    margin-top: 60px;
 }
 
 #userInput {
     margin-left: auto;
     margin-right: auto;
     width: 40%;
-    margin-top: 60px;
+
 }
 
 #textInput {
-    width: 87%;
+    width: 100%;
+    height: auto;
     border: none;
     border-bottom: 3px solid #009688;
     font-family: "Open Sans", sans-serif;

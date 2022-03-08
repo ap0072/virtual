@@ -49,12 +49,12 @@ english_bot = ChatBot(
 english_bot.set_trainer(ListTrainer)
 
 
-for file in os.listdir('data'):
-    convData = open('data/' + file).readlines()
-    english_bot.train(convData)
+# for file in os.listdir('data'):
+#     convData = open('data/' + file).readlines()
+#     english_bot.train(convData)
 
-english_bot.set_trainer(ChatterBotCorpusTrainer)
-english_bot.train("chatterbot.corpus.english")
+# english_bot.set_trainer(ChatterBotCorpusTrainer)
+# english_bot.train("chatterbot.corpus.english")
 
 @app.route('/')
 def login():
@@ -135,8 +135,15 @@ def get_bot_response():
 
     # response=translator.translate(response, dest=result.src)
 
-        
-    return str(response)
+    # s=response.split()
+    # n=len(s)
+    # if(n<10):
+    #     b=n
+    # else:
+    #     a=(n/10)*10
+    #     b=a+10
+        # print(b)    
+    return response
 
 if __name__ == "__main__":
     db.create_all()
