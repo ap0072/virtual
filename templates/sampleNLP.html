@@ -9,14 +9,14 @@
     
     <!-- <h1  style="color: black;">Automated Healthcare Chatbot</h1> -->
     <div style="width: 100%;">
-      <div id="sunny"  style="width: 50%\9;float: left;" >
+      <div id="sunny"  style="width: 50%;float: left;" >
         <!-- <img id="sunny" src="/static/robomoving.png" style="max-width: 100%;height:auto;width: auto\9;"> -->
-        <button onclick="stop()"><img src="/static/pause.jpg" style="height:15px;width:20px;"></button>
+        <!-- <button onclick="stop()"><img src="/static/pause.jpg" style="height:15px;width:20px;"></button>
         <button  onclick="play()"><img src="/static/play.jpg" style="height:15px;width:18px;"></button>
-      
+       -->
       </div>
       
-      <div style="height: 650px;margin-left: 50%;overflow: scroll;width: 50%;text-align: justify;max-width: 100%;height: auto;">
+      <div style="height: 650px;margin-left: 50%;overflow: scroll;">
         <div id="chatbox"  class="overlay" >
             <p class="botText" id="greetText"><span style="text-transform: capitalize;">Hello {{name}}, I am Alexa How may I help you</p>
         </div>
@@ -32,12 +32,17 @@
     <script>
         var ela=document.getElementById("sunny");
         var str_counter_0=0;
+        var robospeaklength=0;
         
         
-        function play() {
-        ela.style.animationPlayState = 'running';
-
-        setInterval ( function() { str_counter_0++; if(str_counter_0>4){stop();str_counter_0=0;} },1000);
+        function play(dynamiclength) {
+          ela.style.animationPlayState = 'running'; 
+          console.log("playing",dynamiclength);
+          if (dynamiclength<3)
+          {
+            dynamiclength=3;
+          } 
+          setInterval ( function() { str_counter_0++; if(str_counter_0>(dynamiclength+2)){stop();str_counter_0=0;}  },1000);
         }
         function pause() {
         ela.style.animationPlayState = 'paused';
@@ -79,6 +84,10 @@
             function(data) 
             {
             var botHtml = '<p class="botText"><span>' + data + '</span></p>';
+            const d=data.split(" ");
+            var l=d.length;
+            
+            play(l);
             var voices = [];
             voices = window.speechSynthesis.getVoices();
             var msg1 = new SpeechSynthesisUtterance();
@@ -96,17 +105,19 @@
         
       
         greetings();
-        play();
+        play(3);
         $("#textInput").keypress(function(e) {
             if(e.which == 13) {
                 getBotResponse();
-                play();
+                
+        
             }
         });
         $("#buttonInput").click(function() {
 
           getBotResponse();
-          play();
+
+          
     
           
         })
