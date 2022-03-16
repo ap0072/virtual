@@ -2,6 +2,7 @@
 <html lang="en" >
 	<head>
 		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Create Account page</title>
 		<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 		<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous"><link rel="stylesheet" href="/static/ca.css">
@@ -54,7 +55,7 @@
 					{%- endfor %}
 					<br>
 					<br>
-					<form  action="signup" method="POST" name="myform" onSubmit="return show()">
+					<form  action="signup" method="POST" name="myform" onSubmit="show()">
 						
 						<p><input style="font-size: larger;border-radius: 10px;" type="text" name="name" id="name"placeholder=" Name"></p>
 						<p><input style="font-size: larger;border-radius: 10px" type="password" name="pwd" id="pwd"placeholder=" Password"></p>
