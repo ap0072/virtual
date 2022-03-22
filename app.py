@@ -49,8 +49,8 @@ english_bot = ChatBot(
 english_bot.set_trainer(ListTrainer)
 
 
-# for file in os.listdir('data'):
-#     convData = open('data/' + file).readlines()
+# for file in os.listdir('virtual/data'):
+#     convData = open('virtual/data/' + file).readlines()
 #     english_bot.train(convData)
 
 # english_bot.set_trainer(ChatterBotCorpusTrainer)
@@ -59,6 +59,10 @@ english_bot.set_trainer(ListTrainer)
 @app.route('/')
 def login():
     return render_template('index.html')
+
+@app.route('/logout')
+def logout():
+    return render_template('index.html') 
 
 @app.route('/login',methods=["POST"])
 def login_post():
@@ -73,7 +77,7 @@ def login_post():
     elif (cursor12):
         flash("Incorrect Password")
     else:
-        flash("User name doesn't exists")
+        flash("User name not found")
     return render_template('index.html')
 
 @app.route('/update',methods=["POST"])

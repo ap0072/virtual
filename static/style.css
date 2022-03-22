@@ -12,6 +12,21 @@ body {
       width: 100%;
     }
   }
+
+#logout{
+
+    float: right;
+    cursor: pointer;
+    font-weight: bold;
+    height: 20px;
+    padding-bottom: 2px;
+    width: 75px;
+    border: none;
+    background: no-repeat top left;
+    padding: 2px 8px;
+    }
+  
+
 #sunny{
     float: left;
     background-image: url("/static/robomoving.png");
