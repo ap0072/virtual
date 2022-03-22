@@ -7,18 +7,15 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   </head>
   <body   style="background-size:auto;background-position: left;" >
-    <li><a href="#hre" style="background-image:url('/static/logout.jpg');"></a></li>
+    
     <!-- <h1  style="color: black;">Automated Healthcare Chatbot</h1> -->
     <div style="width: 100%;">
       <div style="padding-left: 10px;width: 5%;float:right">
-       <form action="logout"> <button id="logout" style="float: right;"><img src="/static/logout2.png" width="30px" height= "30px" ></button></form>
-      </div> 
-      <div id="sunny"  style="width: 100%;" >
-        
-          
+        <form action="logout"> <button id="logout" style="float: right;"><img src="/static/logout2.png" width="30px" height= "30px" ></button></form>
+       </div> 
        
-      
-        
+      <div id="sunny"  style="width: 100%;" >
+
       </div>
       
       <div style="height:650px;margin-left: 20%;overflow: scroll;">
@@ -40,38 +37,7 @@
         var str_counter_0=0;
         var robospeaklength=0;
         
-        (function (global) {
-
-        if(typeof (global) === "undefined")
-        {
-          throw new Error("window is undefined"); 
-        }
-
-        var _hash = "!";
-        var noBackPlease = function () {
-            global.location.href += "#";
-
-        // making sure we have the fruit available for juice....
-        // 50 milliseconds for just once do not cost much (^__^)
-            global.setTimeout(function () {
-                global.location.href += "!";
-            }, 50);
-        };
-
-        // Earlier we had setInerval here....
-          global.onhashchange = function () {
-              if (global.location.hash !== _hash) {
-                  global.location.hash = _hash;
-              }
-          };
-
-          global.onload = function () {
-              
-          noBackPlease();
-
-          }
-        })
-
+        
         function play(dynamiclength) {
           ela.style.animationPlayState = 'running'; 
           console.log("playing",dynamiclength);
@@ -140,10 +106,9 @@
             );
         }
         
-        
+      
         greetings();
         play(3);
-        preventBack();
         $("#textInput").keypress(function(e) {
             if(e.which == 13) {
                 getBotResponse();
