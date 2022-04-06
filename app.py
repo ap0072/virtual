@@ -122,6 +122,9 @@ def signup():
 def forgetpage():
     return render_template('forgetpassword.html')
 
+@app.route('/logout')
+def logout():
+    return render_template('index.html')
 
 @app.route("/get")
 def get_bot_response():
