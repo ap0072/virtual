@@ -62,7 +62,7 @@ body {
 }
 #sunny{
     float: left;
-    background-image: url("/static/robomoving.png");
+    background-image: url("/static/images/robomoving.png");
     height: 600px;
     width: 650px;
     position: relative;
