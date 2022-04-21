@@ -131,8 +131,8 @@ def get_bot_response():
     userText = request.args.get('msg')
     print(userText) 
     # result=translator.translate(str(userText), dest='en')
-    # userText1=result.text
-    # print(userText1)
+    # userText=result.text
+    # print(userText)
     response = str(english_bot.get_response(userText))
 
 
