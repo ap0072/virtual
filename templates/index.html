@@ -1,21 +1,34 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login Page</title>
-  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-  <link rel="stylesheet" type="text/css" href="/static/s2.css">
-  <meta name="google-signin-scope" content="profile email">
-  <meta name="google-signin-client_id" content="YOUR_CLIENT_ID.apps.googleusercontent.com">
-  <script src="https://apis.google.com/js/platform.js" async defer></script>
+ 
+<title>Fine Best App Landing Page for Mobile Apps</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="description" content="Bootstrap, Landing page, Responsive, Businnes, Portfolio, Corporate"> 
+<meta name="Author" content="WebThemez">  
+<!-- CSS Files -->
+<link href="static/css/bootstrap.min.css" rel="stylesheet" media="screen">
+<link href="static/css/font-awesome.min.css" rel="stylesheet">
+<link href="static/fonts/icon-7-stroke/css/pe-icon-7-stroke.css" rel="stylesheet">
+<link href="static/css/animate.css" rel="stylesheet" media="screen">
+<link href="static/css/owl.theme.css" rel="stylesheet">
+<link href="static/css/owl.carousel.css" rel="stylesheet">
+ 
+<link href="static/css/styles.css" rel="stylesheet" media="screen">    
 
-  <script language="javascript">
-	  	var heading1=document.getElementById("robo");
-        function greetings() 
+<!-- Google Fonts --> 
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Alegreya+Sans:100,300,400,700' rel='stylesheet' type='text/css'>
+
+
+<!-- Font Awesome -->
+<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet"> 
+</head>
+<script language="javascript">
+	function greetings() 
             {
             // var botHtml = '<p class="botText"><span>' + data + '</span></p>';
-			data=" Hello I am Alexa. your healthcare chatbot  Happy to help you!"
+			data=" Hi, I am Alexa. your healthcare chatbot  Happy to help you!"
             var voices = [];
             voices = window.speechSynthesis.getVoices();
             var msg1 = new SpeechSynthesisUtterance();
@@ -25,112 +38,543 @@
 			heading1.style["backgroundImage"]="url(/static/gif_play_once/third_gif.gif)";
             
 		}
-	function show()
-	{
-		var uname = document.getElementById("name").value;
-		var pwd = document.getElementById("pwd").value;
-		if(uname==''){
-			alert("username-missing")
-			return false;
-		}
-		else if(pwd.length==''||pwd.length < 6)
-		{
-			alert("Password min length is 6.");
-			return false;
-		}
-
-		return true;
-	
-	}
 	greetings();
 </script>
+<body data-spy="scroll" data-target="#navbar-scroll">
+ 
+<div id="top"></div>
 
-</head>
-<body>
-
-<div class="box-form" >
-	<div class="left" id="robo" style="background-image: url(/static/gif_play_once/third_gif.gif);background-size: auto;background-position:bottom;
-	background-repeat: no-repeat;overflow: hidden;height:auto;width: 100%;">
-		<div class="overlay">
-		<h1 style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">ChatBot</h1>
-		<l> </l>
-		<h2><i style="color: black;">Happy to chat with you !</i></h2>
-		<br></br>
-		<br></br>
-		<span>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<p style="font-size:18px;color:brown;font-style: italic;">Follow us on social media</p>
-			<a href="https://www.facebook.com/Chatbot-V11-105781015380460"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-			<a href="https://twitter.com/"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-			
-		</span>
+<!-- NAVIGATION -->
+<div id="menu">
+	<nav class="navbar-wrapper navbar-default" role="navigation">
+		<div class="container">
+			  <div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-themers">
+				  <span class="sr-only"></span>
+				  <span class="icon-bar"></span>
+				  <span class="icon-bar"></span>
+				  <span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand site-name" href="#top"><img src="static/images/Picture1.png" alt="logo"></a>
+			  </div>
+	 
+			  <div id="navbar-scroll" class="collapse navbar-collapse navbar-themers navbar-right">
+				<form></form>
+				<ul class="nav navbar-nav">
+					<li><a href="#top">Home</a></li>
+					<li><a href="#intro">About</a></li>
+					<li><a href="#feature">Features</a></li> 
+					<li><a href="#screenshot">Screenshots</a></li>
+					<li><a href="#clients">Clients</a></li>
+					<li><a href="login">Login</a></li>
+					<li><a href="#download">Download</a></li>
+				</ul>
+			  </div>
 		</div>
-	</div>
-	
-	
-		<div class="right">
-		<h5 style="text-align: center;">Login</h5>
-		<p style="font-size:20px;color: black;">Don't you have an account? <a href="signup" style="color: blue;">Create Your Account </a><br></p>
-		
-		{%- for category, message in get_flashed_messages(with_categories = true) %}
-		<div class = "alert alert-danger">
-		   <p style=" color: red;font-size: large;">{{ message }}</p>
-		</div>
-	 {%- endfor %}
-
-		<form action="login" method="POST" name="myform" onSubmit="show()">
-			<div class="inputs">
-				<input style="font-size: larger;border-radius: 50px;background-image: linear-gradient(280deg,rgb(85, 224, 85) 10%,yellow);text-align: center;" type="text"id="name" placeholder=" Enter your user name :-)" name="name">
-			
-				<input style="font-size: larger;border-radius: 50px;background-image: linear-gradient(280deg,yellow 10%,rgb(85, 224, 85));text-align: center;" type="password" id="pwd"placeholder=" Enter your password :-)" name="pwd">
-			</div>
-			<br>
-			
-
-			<div>
-				<p style="font-size:18px;color: black;"><a  href="forget" style="color: blue;">forget password?</a></p>
-				<button style="font-size:20px;">Signin</button></div>
-		</form>
-		
-			<br>
-			<!-- <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
-			<script>
-			  function onSignIn(googleUser) {
-				// Useful data for your client-side scripts:
-				var profile = googleUser.getBasicProfile();
-				console.log("ID: " + profile.getId()); // Don't send this directly to your server!
-				console.log('Full Name: ' + profile.getName());
-				console.log('Given Name: ' + profile.getGivenName());
-				console.log('Family Name: ' + profile.getFamilyName());
-				console.log("Image URL: " + profile.getImageUrl());
-				console.log("Email: " + profile.getEmail());
-			
-				// The ID token you need to pass to your backend:
-				var id_token = googleUser.getAuthResponse().id_token;
-				console.log("ID Token: " + id_token);
-			  }
-			</script>  -->
-			
-	</div>
-	
+	</nav>
 </div>
-<!-- partial -->
+ 
+<div class="fullscreen landing parallax banner" data-img-width="2000" data-img-height="1325" data-diff="100">
+	
+	<div class="overlay">
+		<div class="container">
+			<div class="row">
+				
+				
+				
+				<div class="col-md-6">
+				 
+						<h1 class="wow fadeInLeft">
+						<img src="static/images/gifs/crop2_title_page.gif"alt="phone" class="header-phone img-responsive wow fadeInLeft">
+						<h2><p>	 Happy to chat with you!</p></h2>
+					</h1>
+ 
+					<!-- <div class="landing-text wow fadeInLeft">
+						<h2><p>	 Happy to chat with you!</p></h2>
+					</div>				   -->
 
-</body>
+					<!-- header button -->
+					<br>
+					<div class="head-btn wow fadeInLeft">
+						<a href="#" class="btn-primary app-store">
+						<i class="fa fa-apple"></i> <span></span>
+						</a>
+						<a href="#" class="btn-primary play-market">
+						<i class="fa fa-android"></i> <span></span>
+						</a>
+						
+					</div>
+	
+					 				
+
+				</div> 
+				
+				<!-- phone image -->
+				<div class="col-md-6">
+				<img src="static/images/gifs/third_gif.gif" alt="phone" class="header-phone img-responsive wow fadeInRight">
+				</div>
+			</div>
+		</div> 
+	</div> 
+</div>
+   
+<!-- intro section -->
+<div id="intro">
+		<div class="container">
+		<div class="row">
+	
+	<!-- feature image -->
+			<div class="col-md-6 feature-2-pic wow fadeInLeft">
+				<img src="static/images/logo_robo_4.jpg" alt="image" class="img-responsive">
+			</div>	
+			
+			<!-- feature content -->
+			<div class="col-md-6 wow fadeInRight">
+				<h2>Health Care Chatbots</h2>
+				<p>These chatbots are AI-powered conversational chatbots and plays a crucial role in providing relevant healthcare information accessible to the patients, at the right time.
+				</p>
+
+					<div class="btn-section"><a href="#download" class="btn-default">Download Now</a></div>
+		
+			</div>
+			 			  
+		</div>			  
+  
+	</div>
+</div>
+
+<!-- feature section -->
+<div id="feature">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-10 col-md-offset-1 col-sm-12 text-center feature-title">
+
+			<!-- feature title -->
+				<h2>Our Amazing features in Alexa</h2>
+				<p>Alexa is simply a AI powered chatbot related to healthcare industry.</p>
+			</div>
+		</div>
+		<div class="row row-feat">
+			
+			<div class="col-md-12">
+
+				<!-- feature 1 -->
+				<div class="col-sm-4 feat-list">
+					<i class="fa fa-paint-brush wow fadeInUp"></i>
+					<div class="inner">
+						<h4>Fully Customizable</h4>
+						<p>Alexa understands all local languages and can give the response in the same local language too .
+						</p>
+					</div>
+				</div>
+			
+				<!-- feature 2 -->
+				<div class="col-sm-4 feat-list">
+					<i class="fa fa-rss wow fadeInUp" data-wow-delay="0.2s"></i>
+					<div class="inner">
+						<h4>Responsive Design</h4>
+						<p>Contrary to popular belief, Alexa is not simply a response generator. It has a feature of enabled voice system</p>
+					</div>
+				</div>
+			
+				<!-- feature 3 -->
+				<div class="col-sm-4 feat-list"> 
+					<i class="fa fa-recycle wow fadeInUp" data-wow-delay="0.4s"></i>
+					<div class="inner">
+						<h4>Amazing Design</h4>
+						<p>Alexa is trained using chatterbot package, which has flexibility to train with all sorts of conversations in addition.</p>
+					</div>
+				</div>
+			
+				
+			</div>
+		</div>
+	</div>
+</div>
+<section id="features">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-sm-6 wow fadeInRight animated" data-wow-delay=".8s" style="visibility: visible; animation-delay: 0.8s; -webkit-animation-delay: 0.8s; animation-name: fadeInRight; -webkit-animation-name: fadeInRight;">
+                    <h2 class="title">Our Focused on Feature</h2>
+
+                    <div class="feature-item">
+
+                        <div class="media">
+                            <div class="pull-left icon" href="#">
+                                <i class="fa fa-paint-brush"></i>
+                            </div>
+                            <div class="media-body">
+                                <h4 class="media-heading">Reliable and Secure Platform</h4>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisici ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea com</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="feature-item">
+
+                        <div class="media">
+                            <div class="pull-left icon" href="#">
+                                <i class="fa fa-rss"></i>
+                            </div>
+                            <div class="media-body">
+                                <h4 class="media-heading">Everything is perfectly orgainized</h4>
+                                <p>Aipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="feature-item">
+
+                        <div class="media">
+                            <div class="pull-left icon" href="#">
+                                <i class="fa fa-recycle"></i>
+                            </div>
+                            <div class="media-body">
+                                <h4 class="media-heading">Rapid customer support</h4>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-6 wow fadeInLeft animated" data-wow-delay=".8s" style="visibility: visible; animation-delay: 0.8s; -webkit-animation-delay: 0.8s; animation-name: fadeInLeft; -webkit-animation-name: fadeInLeft;">
+                    <div class="block">
+                        <img class="img-responsive" src="static/images/featured-app.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> 
+
+
+<!-- subscribe section -->
+<!-- <div id="subscribe">
+	<div class="subscribe fullscreen parallax" style="background-image:url('images/bg.jpg');" data-img-width="1920" data-img-height="1281" data-diff="100">
+		<div class="overlay">
+			<div class="container">
+
+				mail icon
+				<div class="col-md-4 col-md-offset-4 text-center">
+				<i class="fa fa-envelope-o letter wow fadeInUp"></i>
+				</div>
+				<div class="col-md-8 col-md-offset-2 text-center">
+					<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley.</p>
+
+					<!-- subscribe form -->
+					<!-- <div class="subscribe-form wow fadeInUp">
+						<form class="news-letter mailchimp" action="" role="form" method="POST">
+						<input type="hidden" name="u" value="">
+						<input type="hidden" name="id" value="">
+						<input class="form-control" type="email" name="" placeholder="Your email..." required="">
+							<button type="submit" class="subscribe-btn btn">SUBSCRIBE</button>
+						</form>
+					</div>					
+				</div>
+
+			</div>	
+		</div>
+	</div> -->
+<!-- </div> --> -->
+
+<!-- screenshot section -->
+<div id="screenshot" style="background-color: white;">
+	<div class="container">
+		<div class="text-center">
+			<h2 class="wow fadeInLeft" style="color: black;">Screenshots</h2>
+			<div class="title-line wow fadeInRight"></div>
+		</div>
+		<div class="row screenshots">
+			
+			<div id="screenshots" class="owl-carousel" >
+
+				<!-- screenshot images -->
+				<div class="screen wow fadeInUp">
+					<a href="static/images/img1.jpg" data-toggle="lightbox"><img src="static/images/img1.jpg" alt="Screenshot"></a>
+				</div>
+				
+				<div class="screen wow fadeInUp"o data-ww-delay="0.1s">
+					<a href="static/images/img2.jpg" data-toggle="lightbox"><img src="static/images/img2.jpg" alt="Screenshot"></a>
+				</div>
+				
+				<div class="screen wow fadeInUp" data-wow-delay="0.2s">
+					<a href="static/images/img3.jpg" data-toggle="lightbox"><img src="static/images/img3.jpg" alt="Screenshot"></a>
+				</div>
+				
+				<div class="screen wow fadeInUp" data-wow-delay="0.3s">
+					<a href="static/images/img4.jpg" data-toggle="lightbox"><img src="static/images/img4.jpg" alt="Screenshot"></a>
+				</div>
+				
+				<div class="screen wow fadeInUp" data-wow-delay="0.4s">
+					<a href="static/images/img5.jpg" data-toggle="lightbox"><img src="static/images/img5.jpg" alt="Screenshot"></a>
+				</div>
+				
+				<div class="screen wow fadeInUp" data-wow-delay="0.5s">
+					<a href="static/images/img6.jpg" data-toggle="lightbox"><img src="static/images/img6.jpg" alt="Screenshot"></a>
+				</div>			
+				
+				<div class="screen wow fadeInUp" data-wow-delay="0.6s">
+					<a href="static/images/img7.jpg" data-toggle="lightbox"><img src="static/images/img7.jpg" alt="Screenshot"></a>
+				</div>
+
+				<div class="screen wow fadeInUp" data-wow-delay="0.7s">
+					<a href="static/images/img8.jpg" data-toggle="lightbox"><img src="static/images/img8.jpg" alt="Screenshot"></a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Clients section -->
+<div id="clients">
+	<div class="container">
+		<div class="text-center">
+			<h2 class="wow fadeInLeft">Clients</h2>
+			<div class="title-line wow fadeInRight"></div>
+		</div>
+		<div class="row">
+			<div class="col-sm-10 col-sm-offset-1">	
+			   <div id="owl-clients" class="owl-carousel owl-theme wow fadeInUp">
+				 
+					<!-- Clients 1 -->
+					<div class="clients-item">
+						<div class="client-pic text-center">
+						
+							<!-- client photo -->
+							<img src="static/images/client.jpg" alt="client">
+						</div>
+						<div class="box">
+						
+							<!-- Clients content -->
+							<p class="message text-center">"Printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type dummy text of the printing."</p>
+						</div>
+						<div class="client-info text-center">
+						
+						<!-- client name -->
+							John Doe, <span class="company">Google</span>	
+						</div>
+					</div>		
+					
+					<!-- Clients 2 -->
+					<div class="clients-item">
+						<div class="client-pic text-center">
+
+							<!-- client photo -->
+							<img src="static/images/client2.jpg" alt="client">
+						</div>
+						<div class="box">
+
+							<!-- Clients content -->
+							<p class="message text-center">"Lorem Ipsum is simply dummy text of the printing and when an unknown printer took a galley of type dummy text of the printing and typesetting industry and scrambled."</p>
+						</div>
+						<div class="client-info text-center">
+
+							<!-- client name -->
+							Glen Micheal, <span class="company">CN Technology</span>	
+						</div>
+					</div>				
+					
+					<!-- Clients 3 -->
+					<div class="clients-item">
+						<div class="client-pic text-center">
+
+							<!-- client photo -->
+							<img src="static/images/client3.jpg" alt="client">
+						</div>
+						<div class="box">
+
+							<!-- Clients content -->
+							<p class="message text-center">"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer."</p>
+						</div>
+						<div class="client-info text-center">
+
+							<!-- client name -->
+							Chris Russel, <span class="company">Facebook</span>	
+						</div>
+					</div>			
+				 
+				</div>
+			</div>	
+		</div>	
+	</div>
+</div>
+<!-- <div id="package">
+	<div class="container">
+		<div class="text-center">
+		
+			<!-- pricing title -->
+			<!-- <h2 class="wow fadeInLeft animated" style="visibility: visible; animation-name: fadeInLeft; -webkit-animation-name: fadeInLeft;">Login</h2>
+			<div class="title-line wow fadeInRight animated" style="visibility: visible; animation-name: fadeInRight; -webkit-animation-name: fadeInRight;"></div>
+		</div>
+		<div class="row package-option"> --> -->
+
+			<!-- package 1 -->
+			<!-- <div class="col-sm-4"> -->
+			  <!-- <div class="price-box wow fadeInUp animated" style="visibility: visible; animation-name: fadeInUp; -webkit-animation-name: fadeInUp;"> -->
+			   <!-- <div class="price-heading text-center"> -->
+			   
+					
+					<!-- package name -->
+					<!-- <h3>Basic</h3>
+			   </div> -->
+			   
+			   <!-- price -->
+				<!-- <div class="price-group text-center">
+					<span class="dollar">$</span>
+					<span class="price">12</span>
+					<span class="time">/mo</span>
+				</div> -->
+			
+				<!-- package features -->
+			   <!-- <ul class="price-feature text-center">
+				  <li><strong>300MB</strong> Disk Space</li>
+				  <li><strong>200MB</strong> Bandwidth</li>
+				  <li><strong>4</strong> Subdomains</li>
+				  <li><strong>6</strong> Email Accounts</li>
+				  <li><strike>Webmail Support</strike></li>				  
+			   </ul> -->
+			   
+			   <!-- package button -->
+			   <!-- <div class="price-footer text-center">
+				 <a class="btn btn-price" href="#">BUY NOW</a>
+				</div>	
+			  </div>
+			</div> -->
+			
+			<!-- package 2 -->
+
+			<!-- <div  style="margin-left:auto;">
+			  <div class="price-box wow fadeInUp animated" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; -webkit-animation-delay: 0.2s; animation-name: fadeInUp; -webkit-animation-name: fadeInUp;">
+			   <div class="text-center"> --> -->
+ 
+
+			   <!-- package name -->
+				<!-- <h3	style="color: black;">Don't have an acount? <a href="account.html">Create Account</a></h3>
+			   </div> -->
+			   
+			   <!-- price -->
+				<!-- <div class="price-heading text-center"> -->
+					<!-- <span class="dollar">$</span>
+					<span class="price">16</span>
+					<span class="time">/mo</span> -->
+					
+					
+					
+
+				<!-- <input style="font-size: larger;border-radius: 50px;background-image: linear-gradient(280deg,yellow 10%,rgb(85, 224, 85));text-align: center;" type="password" id="pwd"placeholder=" Enter your password :-)" name="pwd"> -->
+				<!-- </div> -->
+			
+				<!-- package features -->
+			   <!-- <ul class="price-feature text-center"	style="background-color:orange;">
+				  <li><strong><input style="border-radius: 30px;" type="text"id="name" placeholder=" Enter your user name" name="name"></li></strong>
+				  <li><strong><input style="border-radius: 30px;" type="text"id="pwd" placeholder=" Enter your password" name="pwd"></li></strong>
+			  
+			   </ul> -->
+
+				<!-- package button -->
+			   <!-- <div class="price-footer text-center">
+				
+				<a href="forget_password.html" style="color:crimson;">Forget password?		</a>
+				 <a class="btn btn-price" href="chatbot.html">Next</a>
+				</div> -->
+			  <!-- </div>
+			</div>	 -->
+			
+			<!-- package 3 -->
+			<!-- <div class="col-sm-4">
+			  <div class="price-box wow fadeInUp animated" data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.4s; -webkit-animation-delay: 0.4s; animation-name: fadeInUp; -webkit-animation-name: fadeInUp;">
+			   <div class="price-heading text-center">
+			    -->
+					 
+				
+					<!-- package name -->
+					<!-- <h3>Advance</h3>
+			   </div>
+			    -->
+			   <!-- price -->
+				<!-- <div class="price-group text-center">
+					<span class="dollar">$</span>
+					<span class="price">24</span>
+					<span class="time">/mo</span>
+				</div>
+			 -->
+				<!-- package features -->
+			   <!-- <ul class="price-feature text-center">
+				  <li><strong>1.5GB</strong> Disk Space</li>
+				  <li><strong>1.2GB</strong> Bandwidth</li>
+				  <li><strong>14</strong> Subdomains</li>
+				  <li><strong>26</strong> Email Accounts</li>
+				  <li>Webmail Support</li>					  
+			   </ul>
+			    -->
+			   <!-- package button -->
+			   <!-- <div class="price-footer text-center">
+				 <a class="btn btn-price" href="#">BUY NOW</a>
+				</div>	
+			  </div>
+			</div>
+			 -->
+			 
+
+		<!-- </div>
+	</div>
+</div>	 -->
+<!-- download section -->
+<div id="download">
+	<div class="action fullscreen parallax" style="background-image:url('static/images/bg.jpg');" data-img-width="2000" data-img-height="1334" data-diff="100">
+		<div class="overlay downloadSection">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-8 col-md-offset-2 col-sm-12 text-center">
+						<h2 class="wow fadeInLeft">Get Your free Download of Razor App today!</h2>
+						<p class="download-text wow fadeInRight">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type dummy text of the printing and typesetting industry and scrambled.</p>
+						<div class="btn-section">
+						
+						<a href="#" class="btn-primary app-store">
+						<i class="fa fa-apple"></i> <span> App Store</span>
+						</a>
+						<a href="#" class="btn-primary play-market">
+						<i class="fa fa-android"></i> <span> Google Play</span>
+						</a>
+						
+						</div>
+					</div>					
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+  
+<!-- footer -->
+<footer id="footer">
+	<div class="container">
+		<div class="col-sm-4 col-sm-offset-4">
+			<!-- social links -->
+				<div class="social text-center">
+					<ul>
+						<li><a class="wow fadeInUp" href="https://twitter.com/"><i class="fa fa-twitter"></i></a></li>
+						<li><a class="wow fadeInUp" href="https://www.facebook.com/" data-wow-delay="0.2s"><i class="fa fa-facebook"></i></a></li>
+						<li><a class="wow fadeInUp" href="https://plus.google.com/" data-wow-delay="0.4s"><i class="fa fa-google-plus"></i></a></li>
+						<li><a class="wow fadeInUp" href="https://instagram.com/" data-wow-delay="0.6s"><i class="fa fa-instagram"></i></a></li>
+					</ul>
+				</div>	
+			<div class="text-center wow fadeInUp" style="font-size: 14px;">Copyright FineApp 2018 - <a target="_blank" href="https://webthemez.com/tag/free" target="_blank">Free Templates</a> by WebThemez.com</div>
+			<a href="#" class="scrollToTop"><i class="fa fa-arrow-circle-o-up"></i></a>
+		</div>	
+	</div>	
+</footer>
+	
+	<!-- javascript files -->
+    <script src="static/js/jquery.js"></script>
+    <script src="static/js/bootstrap.min.js"></script>
+    <script src="static/js/custom.js"></script>
+    <script src="static/js/jquery.sticky.js"></script>
+	<script src="static/js/wow.min.js"></script>
+	<script src="static/js/owl.carousel.min.js"></script>
+	<script src="static/js/ekko-lightbox-min.js"></script>
+	<script type="text/javascript">
+	$(document).delegate('*[data-toggle="lightbox"]', 'click', function(event) { event.preventDefault(); $(this).ekkoLightbox(); }); 
+	</script>
+	<script>
+		new WOW().init();
+	</script>
+  </body>
 </html>
