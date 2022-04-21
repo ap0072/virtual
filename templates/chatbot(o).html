@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Chatbot page</title>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <link rel="stylesheet" type="text/css" href="/static/css/style123.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  </head>
+  <body   style="background-size:auto;background-position: left;" >
+    
+    <!-- <h1  style="color: black;">Automated Healthcare Chatbot</h1> -->
+    <div style="width: 100%;">
+      <div style="padding-left: 10px;width: 5%;float:right">
+        <form action="/"> <button id="logout" style="float: right;"><img src="/static/images/logout2.png" width="30px" height= "30px" ></button></form>
+       </div> 
+       
+      <div id="sunny"  style="width: 100%;" >
+        <h1><ul>Alexa</ul></h1>
+      </div>
+      
+      <div style="height:650px;margin-left: 20%;overflow: scroll;">
+        <div id="chatbox"  class="overlay" >
+            <p class="botText" id="greetText"><span style="text-transform: capitalize;">Hello {{name}}, I am Alexa How may I help you</p>
+        </div>
+      
+
+        
+      </div>
+      <div id="userInput"  class="overlay" >
+        <input id="textInput" type="text" name="msg" placeholder="Message" autofocus>
+        <input id="buttonInput" type="submit" value="Send">
+        
+    </div>
+    </div>
+    <script>
+        var ela=document.getElementById("sunny");
+        var str_counter_0=0;
+        var robospeaklength=0;
+        
+        
+        function play(dynamiclength) {
+          ela.style.animationPlayState = 'running'; 
+          console.log("playing",dynamiclength);
+          if (dynamiclength<3)
+          {
+            dynamiclength=3;
+          } 
+          setInterval ( function() { str_counter_0++; if(str_counter_0>(dynamiclength+2)){stop();str_counter_0=0;}  },1000);
+        }
+        function pause() {
+        ela.style.animationPlayState = 'paused';
+        }
+        function reset() {
+        ela.style.animation = 'none';
+        ela.offsetHeight; /* trigger reflow to apply the change immediately */
+        ela.style.animation = null;
+
+    
+        }
+        function stop() {
+        reset();
+        pause();
+        }
+
+        function greetings(data) 
+        {
+            // var botHtml = '<p class="botText"><span>' + data + '</span></p>';
+            // data="Hello {{name}}, I am Alexa. How may I  help you!"
+            var voices = [];
+            voices = window.speechSynthesis.getVoices();
+            var msg1 = new SpeechSynthesisUtterance();
+            msg1.text = data;
+            msg1.voice = voices[2];
+            window.speechSynthesis.speak(msg1);
+        }
+
+
+        function getBotResponse() 
+        {
+          var rawText = $("#textInput").val();
+          var userHtml = '<p class="userText"><span>' + rawText + '</span></p>';
+          $("#textInput").val("");
+          $("#chatbox").append(userHtml);
+          document.getElementById('userInput').scrollIntoView({block: 'start', behavior: 'smooth'});
+          $.get("/get", { msg: rawText }).done
+          (
+            function(data) 
+            {
+            var botHtml = '<p class="botText"><span>' + data + '</span></p>';
+            const d=data.split(" ");
+            var l=d.length;
+            
+            play(l);
+            greetings(data);
+
+          
+            $("#chatbox").append(botHtml);
+            document.getElementById('userInput').scrollIntoView({block: 'start', behavior: 'smooth'});
+            }
+          
+            );
+        }
+        
+      
+        greetings("Hello {{name}}, I am Alexa. How may I  help you!");
+        play(3);
+        $("#textInput").keypress(function(e) {
+            if(e.which == 13) {
+                getBotResponse();
+                
+        
+            }
+        });
+        $("#buttonInput").click(function() {
+
+          getBotResponse();
+
+          
+    
+          
+        })
+      </script>
+   
+    
+  </body>
+</html>
