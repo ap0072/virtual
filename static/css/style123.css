@@ -17,7 +17,7 @@ body {
 	font-size:16px;
 	line-height: 28px;
 	color: #777;
-	
+	background: green;
 	overflow-x:hidden;
 	position: relative;
 
@@ -62,7 +62,7 @@ body {
 }
 #sunny{
     float: left;
-    background-image: url("/static/robomoving.png");
+    background-image: url("/static/images/robomoving.png");
     height: 600px;
     width: 650px;
     position: relative;
