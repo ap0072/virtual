@@ -113,7 +113,7 @@ def chatbot():
     cursor12=databasesqlite.query.filter_by(name=name).first()
     
     if cursor:
-        return render_template('chatbot(o).html',name=name)
+        return render_template('chat4.html',name=name)
     elif (cursor12):
         flash("Incorrect Password")
     else:
