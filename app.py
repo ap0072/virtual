@@ -38,16 +38,16 @@ class databasesqlite(db.Model):
 
     
 
-english_bot = ChatBot(
+english_bot1 = ChatBot(
     'Bot',logic_adapters=[{'import_path': 'chatterbot.logic.BestMatch'}],
     )
 
-english_bot.set_trainer(ListTrainer)
+english_bot1.set_trainer(ListTrainer)
 
 
-# for file in os.listdir('data'):
-#     convData = open('data/' + file).readlines()
-#     english_bot.train(convData)
+for file in os.listdir('data'):
+    convData = open('data/' + file).readlines()
+    english_bot1.train(convData)
 
 # english_bot.set_trainer(ChatterBotCorpusTrainer)
 # english_bot.train("chatterbot.corpus.english")
@@ -131,7 +131,7 @@ def get_bot_response():
     # result=translator.translate(str(userText), dest='en')
     # userText1=result.text
     # print(userText1)
-    response = str(english_bot.get_response(userText))
+    response = str(english_bot1.get_response(userText))
 
 
     # response=translator.translate(response, dest=result.src)
