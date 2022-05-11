@@ -12,7 +12,7 @@
       
      <link href="static/css/newstyle.css" rel="stylesheet" media="screen">    
 
-    <link rel="stylesheet" type="text/css" href="/static/css/style123.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/expp_style123.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   </head>
   <body data-spy="scroll" data-target="#navbar-scroll"    style="background-color: white;">
@@ -63,29 +63,24 @@
                       <form action="/"> <button id="logout" style="float: right;"><img src="/static/images/logout2.png"   width="30px" height= "30px" ></button></form>
                     </div>  -->
                     
-                    <div class="col-md-6  feature-2-pic wow fadeInLeft">
+                    <div class="col-md-6">
+                      <h1 class="wow fadeInLeft"></h1>
                       <div  id="sunny" ></div>
                     </div>
                     
-                    <div class="col-md-6">           
-                      <div style="height:600px;width:550px;margin-left: 20px;overflow: scroll;border-color:white ;">
+                               
+                      <div style="height:500px;width:800px;margin-left: 20%;overflow: scroll;">
                           <div id="chatbox"  class="overlay" >
-                            <p class="botText" id="greetText"><span style="text-transform: capitalize;">Hello {{name}},</p>
+                            <p class="botText" id="greetText"><span style="text-transform: capitalize;">Hello {{name}}, </p>
                           </div>
                       </div>
                   
 
                       <div   id="userInput"  class="overlay" >
-                        <table id="myTable">
-                          <tr>
-                            <td><input	id="textInput" type="text" name="msg" placeholder="Message" autofocus></td>
-                            <br>
-                            <td><button id="buttonInput"  type="button"><img src="/static/images/whatsapp.png" style="height: 30px;width:30px;"></button></td>
-                          </tr>
-                        
-                        </table>
+                        <input id="textInput" type="text" class="a"   name="msg" placeholder="Message" autofocus><input id="buttonInput" type="submit" value="Send" class="a">
+                      
                       </div>
-                    </div>
+                    
 
                   </div>
                 </div>

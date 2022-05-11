@@ -70,8 +70,8 @@ body {
     animation-duration: 2s;
     overflow: hidden;
     max-width: 800px;
-    align-content: left;
-    align-items: left;
+    align-content: center;
+    align-items: center;
     flex-flow: wrap;
     /* height: auto; */
 }
@@ -136,44 +136,34 @@ div.exe1{
     margin-left: auto;
     margin-right: auto;
     width: 40%;
-    
+    margin-top: 60px;
 }
 
 #userInput {
-
     margin-left: auto;
     margin-right: auto;
-    width: 40%;
+    width: 30%;
     margin-top: auto;
-    margin-bottom: 10px;
-    border-bottom: 10px;
+
+
+
 }
-
-
 
 #textInput {
     
     width: 100%;
     height: auto;
-    border:#7b4397;
-    border-bottom: 3px  thin    orange ;
+    border: none;
+    border-bottom: 3px solid #009688;
     font-family: "Open Sans", sans-serif;
     font-size: 17px;
-    margin-top: auto;
-    padding: 10px;
-    border-radius: 10px;
-    color: black;
+    margin-top: 55px;
 }
 
 #buttonInput {
-    
+    padding: 3px;
     font-family: "Open Sans", sans-serif;
     font-size: 17px;
-    margin-left: 25px;
-    margin-top: auto;
-    border-left: 10px;
-    border-bottom: 10px ;
-    border-radius: 10px;
 }
 
 .userText {
@@ -182,14 +172,13 @@ div.exe1{
     font-size: 17px;
     text-align: right;
     line-height: 30px;
-    border-bottom: 10px;
+
 }
 
 .userText span {
-    background-color: rgb(207, 7, 207);
-    color: white;
+    background-color:lightgray;
     padding: 10px;
-    border-radius: 20px;
+    border-radius: 2px;
 }
 
 .botText {
@@ -203,15 +192,14 @@ div.exe1{
 
 
 .botText span {
-    background-color:#FAD12C;
-    color: black;
+    background-color:lightgray;
     padding: 10px;
-    border-radius: 20px;
+    border-radius: 2px;
 
 }
 
 .botText span span {
-    /* background-color: white; */
+    background-color: #EF5350;
 
 
 }

@@ -45,9 +45,9 @@ english_bot1 = ChatBot(
 english_bot1.set_trainer(ListTrainer)
 
 
-for file in os.listdir('data'):
-    convData = open('data/' + file).readlines()
-    english_bot1.train(convData)
+# for file in os.listdir('data'):
+#     convData = open('data/' + file).readlines()
+#     english_bot1.train(convData)
 
 # english_bot.set_trainer(ChatterBotCorpusTrainer)
 # english_bot.train("chatterbot.corpus.english")
@@ -56,7 +56,7 @@ for file in os.listdir('data'):
 #different ways of flow of html pages using render template  
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return render_template('chat4.html')
 
 @app.route('/login')
 def login():
