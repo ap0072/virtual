@@ -56,7 +56,7 @@ english_bot1.set_trainer(ListTrainer)
 #different ways of flow of html pages using render template  
 @app.route('/')
 def index():
-    return render_template('chat4.html')
+    return render_template('index.html')
 
 @app.route('/login')
 def login():
