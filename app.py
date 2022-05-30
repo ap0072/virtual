@@ -14,7 +14,45 @@ from chatterbot import ChatBot
 from chatterbot.trainers import ChatterBotCorpusTrainer,ListTrainer
 import os
 
+
+from googletrans import Translator
+translator = Translator()
+
+
 #training the chatterbot algo
+
+try:
+	os.remove("db.sqlite3")
+	print("Old database removed. Training new database")
+except:
+	print('No database found. Creating new database.')
+
+english_bot = ChatBot('Bot')
+english_bot.set_trainer(ListTrainer)
+for file in os.listdir('data'):
+        print('Training using '+file)
+        convData = open('data/' + file).readlines()
+        english_bot.train(convData)
+        print("Training completed for "+file)
+
+
+
+app = Flask(__name__)
+
+
+english_bot = ChatBot('Bot',
+             storage_adapter='chatterbot.storage.SQLStorageAdapter',
+             logic_adapters=[
+   {
+       'import_path': 'chatterbot.logic.BestMatch'
+   },
+   
+],
+trainer='chatterbot.trainers.ListTrainer')
+english_bot.set_trainer(ListTrainer)
+
+
+
 
 app=Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///databasesqlite.sqlite3'
@@ -38,19 +76,6 @@ class databasesqlite(db.Model):
 
     
 
-english_bot1 = ChatBot(
-    'Bot',logic_adapters=[{'import_path': 'chatterbot.logic.BestMatch'}],
-    )
-
-english_bot1.set_trainer(ListTrainer)
-
-
-# for file in os.listdir('data'):
-#     convData = open('data/' + file).readlines()
-#     english_bot1.train(convData)
-
-# english_bot.set_trainer(ChatterBotCorpusTrainer)
-# english_bot.train("chatterbot.corpus.english")
 
 
 #different ways of flow of html pages using render template  
@@ -128,15 +153,15 @@ def get_bot_response():
     # userText = request.form['textInput']
     userText = request.args.get('msg')
     print(userText) 
-    # result=translator.translate(str(userText), dest='en')
-    # userText1=result.text
+    result=translator.translate(str(userText), dest='en')
+    userText1=result.text
     # print(userText1)
-    response = str(english_bot1.get_response(userText))
+    response = str(english_bot.get_response(userText1))
 
 
-    # response=translator.translate(response, dest=result.src)
-    print(response)
-    return response
+    response=translator.translate(response, dest=result.src)
+    # print(response)
+    return str(response.text)
     # flash (response)
 
 
