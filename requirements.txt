@@ -3,3 +3,4 @@ Flask-SQLAlchemy==2.5.1
 SQLAlchemy==1.2.19
 ChatterBot==0.8.4
 googletrans==4.0.0rc1
+#iftheanboveconfiguration,doesnt,work,then,uninstall,Flask,jinja2,and,install,freshly
