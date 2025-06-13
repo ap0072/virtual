@@ -1,0 +1,42 @@
+Installing the packages
+ 
+sudo apt update
+sudo apt install -y make build-essential libssl-dev zlib1g-dev   libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm   libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev
+curl https://pyenv.run | bash
+ 
+Adding the environmental paths in .bashrc file
+ 
+vi ~/.bashrc
+ 
+Add below
+ 
+export PATH="$HOME/.pyenv/bin:$PATH"
+eval "$(pyenv init --path)"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+ 
+source ~/.bashrc
+ 
+Verifiy the pyenv
+ 
+curl https://pyenv.run | bash
+ 
+Installing the Python with required version 3.6
+ 
+pyenv install 3.6.15
+pyenv local 3.6.15
+ 
+python --version
+ 
+Activating the Python virtual environemnt
+ 
+python -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+python app.py
+ 
+ 
+Deactivating the Virtual environemnt
+deactivate
+
+Google Drive link: https://docs.google.com/document/d/1PcTgh5Kl6_JJjOx79axDMB0SqzkclmvBGKqt__mCCas/edit?usp=sharing
