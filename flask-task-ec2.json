@@ -1,0 +1,24 @@
+{
+  "family": "flask-task",
+  "networkMode": "bridge",
+  "containerDefinitions": [
+    {
+      "name": "flask-container",
+      "image": "5555586202185188.dkr.ecr.eu-west-1.amazonaws.com/flask-app:latest",
+      "memory": 512,
+      "cpu": 256,
+      "essential": true,
+      "portMappings": [
+        {
+          "containerPort": 5000,
+          "hostPort": 5000
+        }
+      ]
+    }
+  ],
+  "requiresCompatibilities": ["EC2"]
+}
+
+
+
+

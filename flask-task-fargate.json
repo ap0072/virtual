@@ -1,0 +1,22 @@
+{
+  "family": "flask-fargate-task",
+  "networkMode": "awsvpc",
+  "requiresCompatibilities": ["FARGATE"],
+  "cpu": "2048",
+  "memory": "4096",
+  "executionRoleArn": "arn:aws:iam::586202185188:role/ecsTaskExecutionRole",
+  "containerDefinitions": [
+    {
+      "name": "flask-app",
+      "image": "586202185188.dkr.ecr.eu-west-1.amazonaws.com/flask-app:latest",
+      "portMappings": [
+        {
+          "containerPort": 5000,
+          "protocol": "tcp"
+        }
+      ],
+      "essential": true
+    }
+  ]
+}
+
