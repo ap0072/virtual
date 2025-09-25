@@ -1,3 +1,6 @@
+How I hosted my Python Flask Web Application:
+-------------------------------------------------
+
 Basic EC2 Hosting:
 
 Using Ec2 server with using public IP + port ( default port as 5000 for Flask Web applications 
